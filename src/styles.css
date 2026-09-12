@@ -5,3 +5,38 @@ body {
     background-color: #000;
     color: #fff;
 }
+
+/* for some reason, I can't use Tailwind's @apply */
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    --btn-color: #a855f7;
+    --btn-hover: #9333ea;
+}
+
+.btn-secondary {
+    --btn-color: #52525b;
+    --btn-hover: #3f3f46;
+}
+
+.btn-danger {
+    --btn-color: #ef4444;
+    --btn-hover: #dc2626;
+}
+
+.btn {
+    background-color: var(--btn-color);
+}
+
+.btn:hover {
+    background-color: var(--btn-hover);
+}
