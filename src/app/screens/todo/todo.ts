@@ -11,4 +11,15 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class Todo {
   readonly todos = inject(TodosService);
+
+  addTodo(event: Event) {
+
+    const inputElement = event.target as HTMLInputElement;
+
+    event.preventDefault();
+    const title = inputElement.value.trim();
+    if (!title) return;
+    this.todos.add(title);
+    inputElement.value = '';
+  }
 }
